@@ -1,5 +1,5 @@
 'use client';
-
+import { useState } from 'react';
 import {
   AreaChart,
   Area,
@@ -10,6 +10,10 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { StockTickDto } from '@/hooks/use-socket';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
+import { Button } from '../ui/button';
+import { toast } from "sonner";
+import StockSubscription from '../stock-subscribtion-modal';
 
 interface Props {
   data: StockTickDto[];
@@ -17,11 +21,41 @@ interface Props {
 }
 
 export default function StockLineChart({ data, symbol }: Props) {
+  const [open, setOpen] = useState(false);
   const latest = data[data.length - 1];
+
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4">{symbol}</h2>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-xl font-bold">{symbol}</h2>
+
+        {/* Subscribe Modal Trigger */}
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <Button size="sm" variant="outline">
+              Subscribe
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Subscribe to {symbol}</DialogTitle>
+            </DialogHeader>
+            <StockSubscription
+              symbol={symbol}
+              onSuccess={(message) => {
+                toast.success(message);
+                setOpen(false);
+              }}
+              onError={(message) => {
+                toast.error(message);
+                setOpen(false);
+              }}
+            />
+          </DialogContent>
+        </Dialog>
+      </div>
+
       <ResponsiveContainer width="100%" height={400}>
         <AreaChart data={data}>
           <CartesianGrid horizontal={true} vertical={false} />
