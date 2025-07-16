@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📈 Real-Time Stock Data Visualizer
 
-## Getting Started
+A responsive web application that visualizes real-time stock price updates using WebSockets. Users can monitor live price fluctuations, subscribe to specific stocks for alerts, and view relevant financial news videos — all in a sleek, interactive UI.
 
-First, run the development server:
+**Live Demo:**  
+🔗 [https://market-data-stream-client.vercel.app](https://market-data-stream-client.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📊 **Live stock price charting** with smooth area graphs (Recharts)
+- 🧠 **Dynamic stock list** with color-coded price changes and market status
+- 🔴 Indicates when a stock’s market is closed
+- 📥 **Subscription modal** for users to receive alerts via email
+- 📺 **Embedded financial video news**, randomly selected and autoplayed
+- 🔔 Real-time toasts using Sonner for user feedback
+- ✨ Clean and responsive UI with TailwindCSS and ShadCN components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧰 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Technology          | Role                       |
+|---------------------|----------------------------|
+| **React (Next.js)** | Frontend Framework         |
+| **TypeScript**      | Static Typing              |
+| **TailwindCSS**     | Styling                    |
+| **Recharts**        | Charting Library           |
+| **Sonner**          | Toast Notifications        |
+| **WebSockets**      | Real-Time Data Updates     |
+| **ShadCN/UI**       | UI Components              |
+| **YouTube Embed API** | Financial Video News     |
