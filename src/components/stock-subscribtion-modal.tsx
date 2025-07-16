@@ -42,6 +42,7 @@ export default function StockSubscription({ onSuccess, onError, symbol }: Props)
         <form onSubmit={handleSubmit} className="space-y-4 p-4">
             <div>
                 <Label htmlFor="email">Email</Label>
+                <br/>
                 <Input
                     id="email"
                     type="email"
@@ -52,9 +53,9 @@ export default function StockSubscription({ onSuccess, onError, symbol }: Props)
                 />
             </div>
 
-            <Button type="submit" disabled={!canSubmit || loading} className="w-full">
+            <Button type="submit" disabled={!canSubmit || loading} className="w-full bg-indigo-400">
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Subscribe
+                Toggle Subscription
             </Button>
         </form>
     );

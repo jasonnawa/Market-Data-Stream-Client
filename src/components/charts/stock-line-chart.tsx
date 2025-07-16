@@ -34,12 +34,12 @@ export default function StockLineChart({ data, symbol }: Props) {
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button size="sm" variant="outline">
-              Subscribe
+              Toggle Subscription
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Subscribe to {symbol}</DialogTitle>
+              <DialogTitle>Toggle subscription to {symbol}</DialogTitle>
             </DialogHeader>
             <StockSubscription
               symbol={symbol}
